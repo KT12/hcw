@@ -31,7 +31,8 @@ def parse_toneanalyzer_response(json_data):
     -------
     dict : a {dict} whose keys are emotion ids and values are their corresponding score.
     """
-    pass
+    #return json_data['document_tone']['tone_categories'][0]['tones']
+    return {k['tone_name']: k['score'] for k in json_data['document_tone']['tone_categories'][0]['tones']}
 
 
 if __name__ == '__main__':
